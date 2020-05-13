@@ -199,11 +199,16 @@
 \newgeometry{a4paper,top=20mm,bottom=20mm,left=30mm,right=15mm,nohead,includeheadfoot}
 }
 
+\newcounter{secionnumber}
+\setcounter{secionnumber}{0}
+
 %% Каждая глава начинается с новой страницы, введение и заключение не
 %% нумеруются, но в оглавление входят. А само оглавление в оглавление не входит
 \let\old@section\section
 \def\section{\@ifstar\@section\@@section}
-\def\@section#1{\newpage\old@section*{#1}%
+\def\@section#1{\setcounter{figure}{0}%
+                \setcounter{table}{0}%
+                \addtocounter{secionnumber}{1}\newpage\old@section*{#1}%
         \ifthenelse{\equal{#1}{\contentsname}}%
            {}%
            {\addcontentsline{toc}{section}{#1}}%
@@ -219,3 +224,24 @@
 
 \let\savenumberline\numberline
 \def\numberline#1{\savenumberline{#1.}}
+
+
+\def\figref#1{Рис.~\ref{fig:#1}}
+
+
+\usepackage{amsmath}
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
+
+\def\myfig#1#2#3#4{
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=#4]{figs/#1}
+    \caption{#2}
+    \label{fig:#3}
+\end{figure}
+}
+
+\usepackage{xcolor}
+
+\def\TODO#1{{\color{red}\textbf{TODO: #1}}}
