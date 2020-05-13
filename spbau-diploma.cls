@@ -245,3 +245,6 @@
 \usepackage{xcolor}
 
 \def\TODO#1{{\color{red}\textbf{TODO: #1}}}
+
+\usepackage[perpage]{footmisc}
+
