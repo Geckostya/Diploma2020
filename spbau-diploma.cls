@@ -249,6 +249,7 @@
 \usepackage[perpage]{footmisc}
 
 \usepackage{glossaries}
+\usepackage{glossary-longragged}
 
 \input{glossary.tex}
 
