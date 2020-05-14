@@ -30,15 +30,14 @@
 }
 \maketitle
 \tableofcontents
+
 % У введения нет номера главы
 \section*{Введение}
 
 \section*{Аннотация}
 \section*{Abstract}
 
-
-\section*{Обзор литературы}
-\subsection*{Выводы}
+\input{other/literature.tex}
 
 
 \input{chapters/environment.tex}
@@ -53,6 +52,8 @@
 % У заключения нет номера главы
 \section*{Заключение}
 
+\glsaddall
+\printnoidxglossary[title=Глоссарий, toctitle=Глоссарий, style=altlist,nonumberlist]
 
 \bibliographystyle{ugost2008ls}
 \bibliography{diploma.bib}

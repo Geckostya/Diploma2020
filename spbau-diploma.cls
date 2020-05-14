@@ -248,3 +248,8 @@
 
 \usepackage[perpage]{footmisc}
 
+\usepackage{glossaries}
+
+\input{glossary.tex}
+
+\makenoidxglossaries
