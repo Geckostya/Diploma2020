@@ -204,6 +204,7 @@
 
 %% Каждая глава начинается с новой страницы, введение и заключение не
 %% нумеруются, но в оглавление входят. А само оглавление в оглавление не входит
+\let\safeoldsection\section
 \let\old@section\section
 \def\section{\@ifstar\@section\@@section}
 \def\@section#1{\setcounter{figure}{0}%
@@ -254,3 +255,9 @@
 \input{glossary.tex}
 
 \makenoidxglossaries
+
+\def\cpp{C\texttt{++} }
+
+\usepackage{tocloft}
+\renewcommand{\cftbeforesecskip}{7pt}
+
