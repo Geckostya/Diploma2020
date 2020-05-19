@@ -2,40 +2,39 @@
 % поправить в файле spbau-diploma.cls
 \documentclass[14pt]{spbau-diploma}
 \begin{document}
-% Год, город, название университета и факультета предопределены,
-% но можно и поменять.
-% Если англоязычная титульная страница не нужна, то ее можно просто удалить.
-\filltitle{ru}{
-    chair              = {Кафедра математических и информационных технологий},
-    title              = {Пустое подмножество как замкнутое множество},
-    % Здесь указывается тип работы. Возможные значения:
-    %   coursework - Курсовая работа
-    %   diploma - Диплом специалиста
-    %   master - Диплом магистра
-    %   bachelor - Диплом бакалавра
-    type               = {master},
-    position           = {студента},
-    group              = 666,
-    author             = {Машкин Эдельвейс Захарович},
-    supervisorPosition = {д.\,ф.-м.\,н., профессор},
-    supervisor         = {Выбегалло А.\,А.},
-    reviewerPosition   = {ст. преп.},
-    reviewer           = {Привалов А.\,И.},
-    chairHeadPosition  = {д.\,ф.-м.\,н., профессор},
-    chairHead          = {Омельченко А.\,В.},
-    % university = {САНКТ-ПЕТЕРБУРГСКИЙ АКАДЕМИЧЕСКИЙ УНИВЕРСИТЕТ},
-    % faculty = {Центр высшего образования},
-    % city = {Санкт-Петербург},
-    % year             = {2013}
-}
-\maketitle
+
+% my@body14pt
+\let\NeedsTeXFormat\ignore
+\let\newcommand\renewcommand
+\makeatletter
+\input{size14.clo}%
+\makeatother  
+\let\newcommand\orignewcommand
+\let\NeedsTeXFormat\origNeedsTeXFormat
+\newgeometry{a4paper,top=20mm,bottom=20mm,left=20mm,right=15mm,nohead,includeheadfoot}
+
+\thispagestyle{empty}
+\begin{figure}[hbtp!]
+    \centering
+    \includegraphics[scale=1]{figs/title.png}
+\end{figure}
+
+\newpage
+
+\newgeometry{a4paper,top=20mm,bottom=20mm,left=30mm,right=15mm,nohead,includeheadfoot}
+\setcounter{page}{1}
+
 \tableofcontents
 
-% У введения нет номера главы
-\section*{Введение}
+\input{other/introduction.tex}
 
 \section*{Аннотация}
+
+Активно развивающаяся архитектура процессора RISC-V, имеющая большую поддержку от лидирующих компаний со всего мира, всё ещё не имеет реализации OpenJDK --- эталонной и эффективной среды для разработки и исполнения Java, одного из самых популярных языков программирования. Важнейшим элементом исполнения Java является шаблонный интерпретатор, для реализации которого необходимо разработать ABI, включающий в себя структуры фреймов на стеке и использование регистров для кэширования информации. В ходе данной работы были разработаны и реализованы структуры фреймов, основанные на нативном ABI фреймов RISC-V, также было проведено исследование, основанное на полуавтоматически собранной статистике исполнения Java кода, в результате которого были выявлены наиболее и наименее нуждающиеся в кэшировании данные. Также были найдены и использованы способы протестировать результаты на ещё неполностью рабочем порте.
+
 \section*{Abstract}
+
+The actively developing RISC-V instruction set architecture, which has great support from leading companies from around the world, still does not have an OpenJDK implementation --- a reference and efficient environment for developing and executing Java, which is one of the most popular programming languages. The most important element of Java execution is the template interpreter, for the implementation of which it is necessary to develop an ABI that includes stack frame structures and the use of registers for information caching. In the course of this work, frame structures based on the native ABI of RISC-V frames have been developed and implemented, as well as a study based on semi-automatically collected statistics on the execution of Java code, as a result of which the most and the least caching data have been identified. The solution has been found and used in testing the results on a still incomplete working port.
 
 \input{other/literature.tex}
 
@@ -49,8 +48,8 @@
 \input{chapters/testing.tex}
 
 
-% У заключения нет номера главы
-\section*{Заключение}
+\input{other/conclusion.tex}
+
 
 \glsaddall
 % altlist, longragged, altlong4col 

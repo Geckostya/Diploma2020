@@ -1,4 +1,3 @@
-\NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{spbau-diploma}[2015/05/22 SPbAU LaTeX diploma class]
 \def\my@fontsize{12pt}\def\my@baseclass{article}\def\my@title12pt{}\def\my@body14pt{}
 
