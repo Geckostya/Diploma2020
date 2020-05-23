@@ -32,9 +32,17 @@
 
 Активно развивающаяся архитектура процессора RISC-V, имеющая большую поддержку от лидирующих компаний со всего мира, всё ещё не имеет реализации OpenJDK --- эталонной и эффективной среды для разработки и исполнения Java, одного из самых популярных языков программирования. Важнейшим элементом исполнения Java является шаблонный интерпретатор, для реализации которого необходимо разработать ABI, включающий в себя структуры фреймов на стеке и использование регистров для кэширования информации. В ходе данной работы были разработаны и реализованы структуры фреймов, основанные на нативном ABI фреймов RISC-V, также было проведено исследование, основанное на полуавтоматически собранной статистике исполнения Java кода, в результате которого были выявлены наиболее и наименее нуждающиеся в кэшировании данные. Также были найдены и использованы способы протестировать результаты на ещё неполностью рабочем порте.
 
+\vspace*{1em}
+
+Ключевые слова: RISC-V, OpenJDK, шаблонный интерпретатор, ABI, фрейм, кэширование.
+
 \section*{Abstract}
 
-The actively developing RISC-V instruction set architecture, which has great support from leading companies from around the world, still does not have an OpenJDK implementation --- a reference and efficient environment for developing and executing Java, which is one of the most popular programming languages. The most important element of Java execution is the template interpreter, for the implementation of which it is necessary to develop an ABI that includes stack frame structures and the use of registers for information caching. In the course of this work, frame structures based on the native ABI of RISC-V frames have been developed and implemented, as well as a study based on semi-automatically collected statistics on the execution of Java code, as a result of which the most and the least caching data have been identified. The solution has been found and used in testing the results on a still incomplete working port.
+The actively developing RISC-V instruction set architecture, which has great support from leading companies from around the world, still does not have an OpenJDK implementation --- a reference and efficient environment for developing and executing Java, which is one of the most popular  prog-\newline ramming languages. The most important element of Java execution is the template interpreter, for the implementation of which it is necessary to develop an ABI that includes stack frame structures and the use of registers for information caching. In the course of this work, frame structures based on the native ABI of RISC-V frames have been developed and implemented, as well as a study based on semi-automatically collected statistics on the execution of Java code, as a result of which the most and the least caching data have been identified. The solution has been found and used in testing the results on a still incomplete working port.
+
+\vspace*{1em}
+
+Keywords: RISC-V, OpenJDK, template interpreter, ABI, frame, caching.
 
 \input{other/literature.tex}
 
